@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap");
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  background-color: #F8F9FA;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+}
+
+
+login-title {
+  color: #1E1E40;
+  font-weight: bold;
+}
+
+
+.form-control {
+  border: 1px solid #E0E0E0;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.form-control:focus {
+  border-color: #007BFF;
+  box-shadow: blue;
+}
+
+button{
+    background-color: #007BFF;
+  border-color: #007BFF;
+  font-weight: bold;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+button:hover{
+background-color: #0056D2;
+  border-color: #0056D2;
+  transform: scale(1.02); /* slight zoom effect */
+}
+
+
+
+.login-card {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 420px;
+  max-width: 500px;
+  padding: 40px 30px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 40px 4px 12px   rgba(0, 0, 0, 0.08);
+}
+
+.login-card:hover {
+  transform: scale(1.03);
+  box-shadow: 4px 8px 20px #0056D2;
+}
+
+
+
+@media screen and (min-width: 1200px) {
+  .login-card {
+    max-width: 700px;
+    padding: 3rem;
+  }
+}
+
+/* 🔧 Make login card slightly bigger on large screens without touching the base styles */
+@media screen and (min-width: 1200px) {
+  .login-card {
+    max-width: 800px;
+    padding: 4rem;
+  }
+}
+
+
+.login-card form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+
+.login-title {
+  color: #1E1E40;
+  font-weight: bold;
+}
+
+.login-card .form-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.login-card .form-links a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.login-card .form-links a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ New additions – without modifying existing styles */
+
+/* Container to handle 3D perspective */
+.card-wrapper {
+  perspective: 1000px;
+  position: relative;
+}
+
+/* Apply flip behavior to login card */
+.flip .login-card {
+  transform: rotateY(360deg);
+}
+
+/* Make sure login-card can flip properly without breaking layout */
+.login-card.flip-container {
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  position: relative;
+  min-height: 500px; /* added height for better layout, adjust if needed */
+}
+
+/* Card faces (front and back) */
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+}
+
+/* Back of the card (signup side) */
+.card-back {
+  transform: rotateY(180deg);
+}
